@@ -1,5 +1,6 @@
 <template>
   <div id="wrapper">
+    <el-button>el-button</el-button>
     <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
     <main>
       <div class="left-side">
