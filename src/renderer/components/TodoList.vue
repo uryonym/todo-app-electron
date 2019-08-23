@@ -1,6 +1,6 @@
 <template>
   <el-main>
-    <el-input v-model="input" placeholder="タスク名を入力">
+    <el-input @keypress.enter.native="insertTask" v-model="input" placeholder="タスク名を入力">
       <el-button slot="append" size="mini" @click="insertTask">追加</el-button>
     </el-input>
     <el-table :data="taskList" :show-header="false" stripe>
@@ -25,6 +25,7 @@
     },
     methods: {
       insertTask () {
+        if (this.input === '') { return }
         this.taskList.push({task: this.input})
         this.input = ''
       },
